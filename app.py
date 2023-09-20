@@ -1,10 +1,14 @@
-from flask import Flask
+from flask import Flask, redirect
 
 app = Flask(__name__)
 
 @app.route('/')
 @app.route('/index')
 def start():
+    return redirect('/menu', code=302)
+
+@app.route('/menu')
+def menu():
     return '''
 <!doctype html>
 <html>
@@ -24,10 +28,6 @@ def start():
     </body>
 </html>
 '''
-
-@app.route('/menu')
-def menu():
-    return 
 
 
 @app.route('/lab1')
