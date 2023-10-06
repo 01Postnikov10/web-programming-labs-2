@@ -6,10 +6,69 @@ img {
     height: 55%;
 }
 
+.logo {
+    position: relative;
+    width: 7%;
+    top: 255px;
+    left: 240px;
+}
+
+.python {
+    width: 60%;
+    height: 70%;
+}
+
 h1 {
     text-align: center;
 }
 
+.student {
+    position: absolute;
+    margin-top: 250px;
+    right: 35%;
+    left: 35%;
+}
+
 body {
-    background-color: rgba(7, 104, 152, 0.425);
+    background-color: #333333;
+    color: #dcffffcf;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+header {
+    position: fixed;
+    padding: 10px;
+    top: 0px;
+    font-size: 24px;
+    left: 0;
+    right: 0;
+    background-color: #339999;
+    color: #CCFFFF;
+}
+
+main {
+    font-size: 20px;
+    text-indent: 5px;
+    margin: 70px;
+}
+
+footer {
+    bottom: 0px;
+    right: 0;
+    left: 0;
+    position: fixed;
+    font-size: 24px;
+    padding: 10px;
+    text-align: right;
+    background-color: #339999;
+    color: #CCFFFF;
+}
+
+p {
+    margin: 20px;
+    text-indent: 10px;
+}
+
+a {
+    color: rgb(76, 193, 251);
 }
