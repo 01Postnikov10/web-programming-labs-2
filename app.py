@@ -202,4 +202,7 @@ def crypto():
 @app.route('/lab2/example')
 def example():
     name = 'Кирилл Постников'
-    return render_template('example.html', name=name )
+    lab_n = '2'
+    group = 'ФБИ-14'
+    course = '3'
+    return render_template('example.html', name=name, lab_n=lab_n, group=group, course=course)
