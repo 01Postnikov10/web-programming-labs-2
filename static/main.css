@@ -13,6 +13,7 @@ header {
     right: 0;
     background-color: #339999;
     color: #CCFFFF;
+    z-index: 1;
 }
 
 main {
@@ -31,6 +32,7 @@ footer {
     text-align: right;
     background-color: #339999;
     color: #CCFFFF;
+    
 }
 
 a {

@@ -5,7 +5,7 @@ app = Flask(__name__)
 @app.route('/')
 @app.route('/index')
 def start():
-    return redirect('/menu', code=302)
+    return redirect('/menu', code=304)
 
 @app.route('/menu')
 def menu():
@@ -231,3 +231,7 @@ def example():
 @app.route('/lab2/')
 def lab2():
     return render_template('lab2.html')
+
+@app.route('/lab2/autos')
+def autos():
+    return render_template('autos.html')

@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+
+{% block main %}
+    <style>
+        img {
+            width: 290px;
+            height: 180px;
+            position: relative;
+            border: 0.5px solid rgb(255, 255, 255);
+        }
+        .text {
+            width: 300px;
+            position: absolute;
+            font-size: 17px;
+            left: 310px;
+            top: 0px;
+            border-left: 0.5px solid;
+            padding-left: 5px;
+            margin-left: 5px;
+        }
+        .block {
+            position: relative;
+            padding-bottom: 25px;
+        }
+        .list1 {
+            position: absolute;
+            top: 70px;
+        }
+        .list2 {
+            position: absolute;
+            right: 370px;
+            top: 70px;
+        }
+    </style>
+    <div class="list1">
+        <div class="block">
+            <img src="{{url_for('static', filename='lamborghini.jpg')}}">
+            <div class="text">
+                <i>Lamborghini Diablo</i>  — суперкар, выпускавшийся итальянской компанией Lamborghini в период
+                с 1990 года по 2001 год. Официальная презентация автомобиля состоялась 21 января 1990 года 
+                в городе Монте-Карло.
+            </div>
+        </div>
+        <div class="block">
+            <img src="{{url_for('static', filename='merin.jpg')}}">
+            <div class="text">
+                <i>Mercedes-Benz 300 SL</i>  — двухместный спортивный автомобиль, выпускавшийся компанией 
+                Mercedes-Benz с 1954 по 1957 год как купе с крыльями чайки и с 1957 по 1963 год как родстер.
+            </div>
+        </div>
+        <div class="block">
+            <img src="{{url_for('static', filename='aventador.jpg')}}">
+            <div class="text">
+                <i>Lamborghini Aventador</i>  —  суперкар, выпускавшийся компанией Lamborghini с 2011 по 2021 год. 
+                Aventador пришёл на смену Lamborghini Murciélago и оснащался 6,5-литровым V-образным 
+                12-цилиндровым двигателем мощностью от 780 л. с.
+            </div>
+        </div>
+    </div>
+    <div class="list2">
+        <div class="block">
+            <img src="{{url_for('static', filename='spectre.jpg')}}">
+            <div class="text">
+                <i>Rolls Royce SPECTRE</i>  — первый в мире ультра-роскошный электрический купе от Rolls-Royce. 
+                Это новое поколение созданных вручную автомобилей Rolls-Royce.
+            </div>
+        </div>
+        <div class="block">
+            <img src="{{url_for('static', filename='dodge.jpg')}}">
+            <div class="text">
+                <i>Dodge Challenger</i>  — Представленный осенью 1969 года для 1970 модельного года, 
+                Challenger был одним из двух автомобилей Chrysler E-body, другим был немного меньший Plymouth Barracuda.
+            </div>
+        </div>
+        <div class="block">
+            <img src="{{url_for('static', filename='lada.jpg')}}">
+            <div class="text">
+                <i>ВАЗ-2107 «Жигули» (LADA 2107)</i>  —  советский и российский заднеприводный автомобиль II группы 
+                малого класса. Является одним из последних представителей «вазовской классики», 
+                выпускался с 11 марта 1982 года по 17 апреля 2012 года.
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
