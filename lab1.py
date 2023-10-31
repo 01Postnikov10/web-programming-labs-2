@@ -1,5 +1,5 @@
 from flask import Blueprint, redirect, url_for
-lab1 = Blueprint('lab1',__name__)
+lab1 = Blueprint('lab1', __name__)
 
 
 @lab1.route('/')
@@ -38,7 +38,7 @@ def menu():
 
 
 @lab1.route('/lab1')
-def lab():     
+def lab_1():     
     return '''
     <!doctype html>
     <link rel="stylesheet" href="''' + url_for('static', filename='lab1.css') + '''">
