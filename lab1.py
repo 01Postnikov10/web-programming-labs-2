@@ -38,7 +38,7 @@ def menu():
 
 
 @lab1.route('/lab1')
-def lab_1():     
+def lab():     
     return '''
     <!doctype html>
     <link rel="stylesheet" href="''' + url_for('static', filename='lab1.css') + '''">
