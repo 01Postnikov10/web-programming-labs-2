@@ -49,3 +49,7 @@ footer {
 a {
     color: rgb(76, 193, 251);
 }
+
+.error {
+    color: #e84a4a;
+}
