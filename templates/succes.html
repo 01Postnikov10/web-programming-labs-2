@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block lab %}Лабораторная работа 3{% endblock %}
+
+{% block main %}
+<style>
+    span {
+        display: block;
+        text-align: center;
+        width: 600px;
+        height: 80%;
+        margin: 100px auto;
+    }
+</style>
+
+    <span>
+        <h1>Спасибо, ваш заказ оплачен!</h1>
+        <div>Ожидайте доставку!</div>
+        <a href="/lab3/order/">Новый заказ</a>
+    </span>
+{% endblock %}
