@@ -47,3 +47,40 @@ def pay():
 @lab3.route('/lab3/succes/')
 def succes():
     return render_template('succes.html')
+
+
+@lab3.route('/lab3/booking/')
+def booking():
+    errors = {}
+    bags = {}
+    user = request.args.get('user')
+    if user == '':
+        errors['user'] = '*'
+
+    age = request.args.get('age')
+    if age == '':
+        errors['age'] = '*'
+
+    if request.args.get('bag') == 'on':
+        bags['bag'] = 'Проезд с багажом'
+    else:
+        bags['bag'] = 'Проезд без багажа'
+
+    tarif = request.args.get('tarif')
+        
+    point_a = request.args.get('point_a')
+    if point_a == '':
+        errors['point_a'] = '*'
+    
+    point_b = request.args.get('point_b')
+    if point_b == '':
+        errors['point_b'] = '*'
+
+    date = request.args.get('date')
+    if date == '':
+        errors['date'] = '*'
+
+    position = request.args.get('position')
+    return render_template('booking.html', 
+                           errors=errors, user=user, age=age, tarif=tarif, point_a=point_a, 
+                           point_b=point_b, date=date, position=position, bags=bags)

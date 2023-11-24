@@ -1,0 +1,185 @@
+{% extends 'base.html' %}
+
+{% block lab %}Лабораторная работа 3{% endblock %}
+
+{% block main %}
+
+    <style>
+        h1 {
+            text-align: center;
+        }
+        form {
+            position: relative;
+            top: 20px;
+            border: 3px rgb(240, 239, 245) solid;
+            border-radius: 5px;
+            padding: 30px 100px 0 100px;
+            background-color: rgb(8, 71, 59);
+            height: 350px;
+        }
+        .block1 {
+            position: relative;
+            width: 300px;
+        }
+        .block2 {
+            position: relative;
+            width: 450px;
+            left: 350px;
+            bottom: 270px;
+        }
+        .block3 {
+            position: relative;
+            width: 300px;
+            left: 800px;
+            bottom: 165px;
+        }
+        .bsub {
+            position: relative;
+            text-align: center;
+            bottom: 120px;
+        }
+        button {
+            width: 300px;
+            height: 30px;
+        }
+    </style>
+
+    {% if user and age and date and point_a and point_b %}
+
+    <style>
+        .block {
+            border: 1px white solid;
+            top: 20px;
+            padding: 0px 100px 40px 100px;
+            background-color: rgba(7, 101, 82, 0.997);
+            height: 350px;
+            border-radius: 80px 1px 1px 1px;
+        }
+        .block1 {
+            width: 400px;
+            top: 45px;
+        }
+        .block2 {
+            left: 450px;
+            bottom: 140px;
+        }
+        .block3 {
+            bottom: 325px;
+            left: 830px;
+        }
+        a {
+            position: relative;
+            bottom: 160px;
+            padding: 7px 60px 7px 60px;
+            color: black;
+            background-color: whitesmoke;
+        }
+        .a {
+            text-align: center;
+            position: relative;
+        }
+    </style>
+
+
+    <h1>Ваш билет</h1>
+
+    <div class="block">
+        <div class="block1">
+            <div>ФИО: {{ user }}</div><br><br>
+            <div>Возраст: {{ age }}</div><br><br>
+            <div>{{ 'Детский' if tarif == 'kids' else 'Взрослый' }} тариф</div>
+        </div>
+
+        <div class="block2">
+            <div>Пункт отправления: {{ point_a }}</div><br><br>
+            <div>Пункт прибытия: {{ point_b }}</div><br><br>
+            <div>Дата: {{ date }}</div>
+        </div>
+
+        <div class="block3">
+            <div>
+                Место/Полка: 
+                {{ 'Верхняя' if position == 'up' }} 
+                {{ 'Нижняя' if position == 'low' }}
+                {{ 'Верхняя боковая' if position == 'up_side' }}
+                {{ 'Нижняя боковая' if position == 'low_side' }}
+            </div><br><br>
+
+            <div>{{ bags.bag }}</div>
+        </div>
+
+        <div class="a"><a href="/lab3/booking">Готово</a></div>
+    </div>
+
+    {% else %}
+
+    <h1>Заказ билета</h1>
+
+    <form>
+        <div class="block1">
+            <div>
+                <label>ФИО:</label>
+                    <input type="text" placeholder="Ваше ФИО" name="user" value="{{ user or '' }}">
+                    <span class="error">{{ errors.user }}</span>
+            </div><br>
+            <div>
+                <label>Возраст:</label>
+                    <input type="number" name="age" min="18" max="120" value="{{ age or '' }}">
+                    <span class="error">{{ errors.age }}</span><br>
+            </div><br>
+
+            <div>
+                <label>Тариф:
+                    <input type="radio" value="kids" name="tarif" checked>Детский
+                </label>
+                <label>
+                    <input type="radio" value="adult" name="tarif">Взрослый
+                </label>
+            </div><br>
+        </div>
+
+        <div class="block3">
+            <div>
+                <label>Полка:</label>
+                <select name="position">
+                    <option value="up" {{ position == 'up' and 'selected' }}>Верхняя</option>
+                    <option value="low" {{ position == 'low' and 'selected' }}>Нижняя</option>
+                    <option value="up_side" {{ position == 'up_side' and 'selected' }}>Верхняя боковая</option>
+                    <option value="low_side" {{ position == 'low_side' and 'selected' }}>Нижняя боковая</option>
+                </select>
+            </div><br>
+            <div>
+                <label>
+                    Багаж<input type="checkbox" name="bag">
+                </label>
+            </div><br>
+        </div>
+
+        <div class="block2">
+            <div>
+                <label>Пункт отправления:
+                    <input type="text" name="point_a" value="{{ point_a or '' }}">
+                    <span class="error">{{ errors.point_a }}</span>
+                </label>
+            </div><br>
+            <div>
+                <label>Пункт прибытия:
+                    <input type="text" name="point_b" value="{{ point_b or '' }}">
+                    <span class="error">{{ errors.point_b }}</span>
+                </label>
+            </div><br>
+            <div>
+                <label>Дата:</label>
+                <input type="date" name="date" value="{{ date }}">
+                <span class="error">{{ errors.date }}</span>
+            </div>
+        </div>
+
+        <div class="bsub">
+            <button type="submit">Оформить</button>
+        </div>
+    </form>
+
+    {% endif %}
+
+{% endblock %}
