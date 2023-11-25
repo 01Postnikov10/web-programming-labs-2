@@ -2,7 +2,7 @@ from flask import Blueprint, render_template
 lab2 = Blueprint('lab2', __name__)
 
 
-@lab2.route('/lab2/example')
+@lab2.route('/lab2/example/')
 def example():
     name = 'Кирилл Постников'
     lab_n = '2'
