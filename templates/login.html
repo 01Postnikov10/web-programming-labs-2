@@ -10,10 +10,12 @@
         <div>
             <label for="username">Пользователь</label>
             <input type="text" id="username" name="username" value="{{ username or '' }}">
+            <span class="error">{{error1}}</span>
         </div>
         <div>
             <label for="password">Пароль</label>
             <input type="password" id="password" name="password" value="{{ password or '' }}">
+            <span class="error">{{ error2 }}</span>
         </div>
         <div>
             <button type="submit">Войти</button>
