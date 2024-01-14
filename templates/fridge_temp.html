@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block lab %}Лабораторная работа 4{% endblock %}
+
+{% block main %}
+    <style>
+    img {
+        width: 10%;
+    }
+    </style>
+
+    <h1>Холодильник</h1>
+    <h3>Установленная температура: {{ foot }}</h3>
+
+    {% if src %}
+    <img src="{{ url_for('static', filename=src)}}">
+    {% elif src2 %}
+    <img src="{{ url_for('static', filename=src2)}}">
+    <img src="{{ url_for('static', filename=src2)}}">
+    {% elif src3 %}
+    <img src="{{ url_for('static', filename=src3)}}">
+    <img src="{{ url_for('static', filename=src3)}}">
+    <img src="{{ url_for('static', filename=src3)}}">
+    {% endif %}
+
+{% endblock %}

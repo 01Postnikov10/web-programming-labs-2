@@ -30,3 +30,36 @@ def login():
     return render_template('login.html', error=error, username=username, password=password)
 
 
+@lab4.route('/lab4/fridge', methods = ['GET', 'POST'])
+def fridge():
+    temp = request.form.get('temp')
+    
+    if request.method == 'GET':
+        return render_template('fridge.html')
+    
+    if temp == '':
+        error = 'Введите значение'
+        return render_template('fridge.html', temp=temp, error=error)
+    
+    elif float(temp) < -12:
+        error = 'Не удалось установить температуру - слишком низкое значение'
+        return render_template('fridge.html', temp=temp, error=error)
+    
+    elif float(temp) > -1:
+        error = 'Не удалось установить температуру - слишком высокое значение'
+        return render_template('fridge.html', temp=temp, error=error)
+
+    elif -12 <= float(temp) <= -9:
+        foot = temp +'°C'
+        src3 = 'snow.png'
+        return render_template('fridge_temp.html', temp=temp, foot=foot, src3=src3)
+    
+    elif -8 <= float(temp) <= -5:
+        foot = temp +'°C'
+        src2 = 'snow.png'
+        return render_template('fridge_temp.html', temp=temp, foot=foot, src2=src2)
+    
+    elif -4 <= float(temp) <= -1:
+        foot = temp +'°C'
+        src = 'snow.png'
+        return render_template('fridge_temp.html', temp=temp, foot=foot, src=src)
