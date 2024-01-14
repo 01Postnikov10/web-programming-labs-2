@@ -63,3 +63,40 @@ def fridge():
         foot = temp +'°C'
         src = 'snow.png'
         return render_template('fridge_temp.html', temp=temp, foot=foot, src=src)
+
+
+@lab4.route('/lab4/zerno/', methods = ['GET', 'POST'])
+def zerno():
+    error = None
+    grain = None
+    weight = None
+    skidka = ''
+    price = 0
+    if request.method == 'POST':
+        grain = request.form.get('grain')
+        weight = request.form.get('weight')
+
+        if weight is None or weight == '':
+            error = 'Не введен вес'
+        else:
+            weight = float(weight)
+
+            if weight <= 0:
+                error = 'Неверное значение веса'
+            elif weight > 500:
+                error = 'Такого объема сейчас нет в наличии'
+            else: 
+                if grain == 'yachmen':
+                    price = 12000*weight
+                elif grain == 'oves':
+                    price = 8500*weight
+                elif grain == 'pshenitsa':
+                    price = 8700*weight
+                else:
+                    price = 14000*weight
+                
+                if weight > 50 and weight <= 500:
+                        price = price*0.9
+                        skidka  = 'Применена скидка за большой объём'
+                        
+    return render_template('zerno.html', error=error, grain=grain, weight=weight, price=price, skidka=skidka)
