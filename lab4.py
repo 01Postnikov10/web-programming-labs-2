@@ -126,7 +126,7 @@ def cookies():
         return render_template('cookies.html', errors=errors)
 
     headers = {
-        'Set-cookie': ['color=' + color + '; path=/', 'fontsize=' + fontsize + '; path=/'],
+        'Set-cookie': ['color=' + color + '; path=/', 'backgroundcolor=' + backgroundcolor + '; path=/' 'fontsize=' + fontsize + '; path=/'],
         'Location': '/lab4/cookies'
     }
 
