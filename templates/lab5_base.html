@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block names %}{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='lab5.css')}}">
+</head>
+<body>
+    <header>
+        <a href="/lab5/"><b>База знаний</b></a>
+        <div class="show_notes"><a href="/lab5/article_list">Просмотреть заметки</a></div>
+        <div class="create_notes"><a href="/lab5/new_article">Создать заметки</a></div>
+        <div class="login"><a href="/lab5/login">Логин</a></div>
+        <div class="regist"><a href="/lab5/register">Регистрация</a></div>
+        <div class="user_name">{{ username }}</div>
+    </header>
+
+    <main>
+        {% block main %}{% endblock %}
+    </main>
+    
+    <footer>
+        &copy; Постников Кирилл, ФБИ-14, 3 курс, 2023
+    </footer>
+</body>
+</html>

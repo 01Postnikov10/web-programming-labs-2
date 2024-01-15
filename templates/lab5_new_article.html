@@ -1,0 +1,33 @@
+{% extends "lab5_base.html" %}
+
+{% block names %}Новая за{% endblock %}
+
+{% block main %}
+<style>
+    input, textarea {
+        margin-top: 10px;
+        width: 400px;
+        padding: 5px;
+    }
+    div {
+        width: 600px;
+        position: relative;
+        left: 300px;
+    }
+</style>
+    <div>
+        <h1>Новая заметка</h1>
+        {% if errors %}
+            {% for error in errors %}
+            <div div class="error" style="font-size: 20px;">{{ error }}</div>
+            {% endfor %}
+        {% endif %}
+        
+        <form method="POST">
+            <input name="title_article" type="text" placeholder="Название статьи"><br><br>
+            <textarea name="text_article" placeholder="Текст статьи" rows="20"></textarea><br>
+            <input type="checkbox" name="is_public" style="width: 10px;">Сделать публичной<br>
+            <input type="submit" value="Apply" style="font-weight:bolder; color: rgb(11, 131, 11);">
+        </form>
+    </div>
+{% endblock %}

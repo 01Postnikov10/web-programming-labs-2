@@ -1,0 +1,14 @@
+{% extends 'lab5_base.html' %}
+
+{% block names %}Список пользователей{% endblock %}\
+
+{% block main %}
+    <h1>Список пользователей:</h1>
+    <div>
+        <ol>
+            {% for user in users %}
+            <li>{{ user[1] }}</li>
+            {% endfor %}
+        </ol>
+    </div>
+{% endblock %}

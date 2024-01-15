@@ -1,0 +1,13 @@
+{% extends "lab5_base.html" %}
+
+{% block names %}статьи{% endblock %}
+
+{% block main %}
+    <div>
+     <h1>{{ article_title }}</h1>
+     <a href="/lab5/" style="border: 2px solid blue; padding: 5px 10px; border-radius: 5px;">На главную</a>
+     {% for paragraph in article_text %}
+     <p>{{ paragraph }}</p>
+     {% endfor %}
+     </div>
+{% endblock %}
