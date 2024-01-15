@@ -33,7 +33,7 @@ def menu():
                 </div>
                     <a href='/lab4'>Четвертая лабораторная</a>
                 </div>
-                </div>
+                <div>
                     <a href='/lab5'>Пятая лабораторная</a>
                 </div>
             </main>
