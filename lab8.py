@@ -50,4 +50,3 @@ def add_course():
     courses.append(course)
     course["date_"] = datetime.now().strftime("%Y-%m-%d")
     return {"num": len(courses)-1}
-
